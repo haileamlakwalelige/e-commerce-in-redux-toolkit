@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
+import Navbar from "./components/navbar/Navbar"
+import Main from "./components/main/Main"
+import Filterate from './components/filterate/Filterate'
+import SingleProduct from './components/filterate/SingleProduct'
+import Footer from "./footer/Footer"
+
+export default function App() {
+  const router=createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Main />}/>
+        <Route path='/filter/:type' element={<Filterate />} />
+        <Route path='/filter/:type/:id' element={<SingleProduct />} />
+   
+      </Route>
+    )
+  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RouterProvider router={router} />
+      <Footer />
     </div>
-  );
+  )
 }
-
-export default App;
