@@ -65,7 +65,7 @@ const SingleProduct = () => {
                     onChange={(e) => setSize(e.target.value)}
                     className="w-full border-gray-600 focus:outline-none px-2 "
                   >
-                    {item.size.map((colors)=>(
+                    {item.size.map((size)=>(
                       <option>{size}</option>
                     ))}
                   </select>
