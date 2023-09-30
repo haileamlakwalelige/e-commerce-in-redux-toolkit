@@ -57,7 +57,7 @@ const SingleProduct = () => {
 
                 <div className="py-3 w-full">
                 <p className="text-lg">Pick Your Size </p>
-                <div className="w-full border-gray-600 border-2 py-1 rounded my-3">
+                <div className="w-full border-gray-600 border-2 py-1 rounded my-2">
                   <select
                     name="size"
                     id="size"
