@@ -6,11 +6,11 @@ const SingleProduct = () => {
   const { id } = useParams();
   const singles = useSelector((state) => state.products.singleProduct);
   const productSize = singles[0].size ? singles[0].size[0] : '';
-  // const productColor= singles[0].color ? singles[0].color[0] : '';
+  const productColor= singles[0].color ? singles[0].color[0] : '';
   const [size, setSize] = useState(productSize);
-  // const [color, setColor]=useState(productColor);
+  const [color, setColor]=useState(productColor);
   console.log("size",size);
-  // console.log("color",color);
+  console.log("color",color);
   console.log('singles', singles);
 
   return (
@@ -38,22 +38,22 @@ const SingleProduct = () => {
               <p className="text-lg py-2 bg-green-500 mt-2 px-16 text-white rounded">
                 ${item.price}
               </p>
-                  {/* <div className="py-3 w-full">
-                <p className="text-lg">Pick Your Size </p>
+                  <div className="py-3 w-full">
+                <p className="text-lg">Pick Your Color </p>
                 <div className="w-full border-gray-600 border-2 py-1 rounded my-3">
                   <select
-                    name="size"
+                    name="color"
                     id="size"
-                    value={size}
-                    onChange={(e) => setSize(e.target.value)}
+                    value={color}
+                    onChange={(e) => setColor(e.target.value)}
                     className="w-full border-gray-600 focus:outline-none px-2 "
                   >
-                    {singles.color.map((colors)=>(
+                    {item.color.map((colors)=>(
                       <option>{colors}</option>
                     ))}
                   </select>
                 </div>
-              </div> */}
+              </div>
 
                 <div className="py-3 w-full">
                 <p className="text-lg">Pick Your Size </p>
@@ -65,9 +65,9 @@ const SingleProduct = () => {
                     onChange={(e) => setSize(e.target.value)}
                     className="w-full border-gray-600 focus:outline-none px-2 "
                   >
-                    <option>M</option>
-                    <option>M</option>
-                    <option>L</option>
+                    {item.size.map((colors)=>(
+                      <option>{size}</option>
+                    ))}
                   </select>
                 </div>
               </div>
