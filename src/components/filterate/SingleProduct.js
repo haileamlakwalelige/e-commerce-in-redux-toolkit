@@ -35,7 +35,7 @@ const SingleProduct = () => {
               <p className="text-lg py-1 text-center">
                 <span className="font-bold">Description:</span> {item.text}
               </p>
-              <p className="text-lg py-2 bg-green-500 px-16 text-white rounded">
+              <p className="text-lg py-2 bg-green-500 mt-2 px-16 text-white rounded">
                 ${item.price}
               </p>
                   {/* <div className="py-3 w-full">
@@ -71,6 +71,9 @@ const SingleProduct = () => {
                   </select>
                 </div>
               </div>
+              <button className="text-lg py-2 bg-green-500 px-16 text-white rounded">
+                Add to cart
+              </button>
             </div>
           </div>
         ))}
