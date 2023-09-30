@@ -6,18 +6,19 @@ const SingleProduct = () => {
   const { id } = useParams();
   const singles = useSelector((state) => state.products.singleProduct);
   const productSize = singles[0].size ? singles[0].size[0] : '';
-  const productColor= singles[0].color ? singles[0].color[0] : '';
+  // const productColor= singles[0].color ? singles[0].color[0] : '';
   const [size, setSize] = useState(productSize);
-  const [color, setColor]=useState(productColor);
+  // const [color, setColor]=useState(productColor);
   console.log("size",size);
-  console.log("color",color);
+  // console.log("color",color);
   console.log('singles', singles);
+
   return (
     <div className="flex">
       {singles
         .filter((single) => single.id === id)
-        .map((item, index) => (
-          <div key={index} className="grid grid-cols-2 gap-10 px-10 py-10">
+        .map((item) => (
+          <div key={item.id} className="grid grid-cols-2 gap-10 px-10 py-10">
             <div className="flex justify-center items-center">
               <img
                 src={item.img}
@@ -37,7 +38,7 @@ const SingleProduct = () => {
               <p className="text-lg py-2 bg-green-500 px-16 text-white rounded">
                 ${item.price}
               </p>
-                  <div className="py-3 w-full">
+                  {/* <div className="py-3 w-full">
                 <p className="text-lg">Pick Your Size </p>
                 <div className="w-full border-gray-600 border-2 py-1 rounded my-3">
                   <select
@@ -52,16 +53,16 @@ const SingleProduct = () => {
                     ))}
                   </select>
                 </div>
-              </div>
+              </div> */}
 
                 <div className="py-3 w-full">
-                <p className="text-lg">Pick Your Color </p>
+                <p className="text-lg">Pick Your Size </p>
                 <div className="w-full border-gray-600 border-2 py-1 rounded my-3">
                   <select
-                    name="color"
-                    id="color"
-                    value={color}
-                    onChange={(e) => setColor(e.target.value)}
+                    name="size"
+                    id="size"
+                    value={size}
+                    onChange={(e) => setSize(e.target.value)}
                     className="w-full border-gray-600 focus:outline-none px-2 "
                   >
                     <option>M</option>

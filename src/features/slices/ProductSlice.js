@@ -12,7 +12,6 @@ import {storeData } from '../../assets/data/data';
       singleProduct:JSON.parse(sessionStorage.getItem('singleProduct'))||storeData,
     },
     
-
     reducers:{
              filtersProduct(state, action){
                 try{
